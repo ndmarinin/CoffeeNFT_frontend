@@ -1,4 +1,4 @@
-const CONTRACT_NAME = "nft-frontend-simple-mint.blockhead.testnet";
+const CONTRACT_NAME = "nft-mint-frontend.siberium.testnet";
 
 function getConfig(env) {
   switch (env) {
@@ -8,6 +8,7 @@ function getConfig(env) {
         networkId: "111111",
         nodeUrl: "https://rpc.main.siberium.net",
         contractName: CONTRACT_NAME,
+        helperUrl: "https://helper.mainnet.metamask.io",
       };
     case "development":
     case "testnet":
@@ -15,6 +16,7 @@ function getConfig(env) {
         networkId: "111000",
         nodeUrl: "https://rpc.test.siberium.net",
         contractName: CONTRACT_NAME,
+        helperUrl: "https://helper.testnet.metamask.io",
       };
     default:
       throw Error(
