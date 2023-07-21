@@ -9,6 +9,7 @@ function getConfig(env) {
         nodeUrl: "https://rpc.main.siberium.net",
         contractName: CONTRACT_NAME,
         explorerUrl: "https://explorer.main.siberium.net.ru",
+        helperUrl: "https://helper.mainnet.near.org",
         walletUrl: "https://wallet.mainnet.siberium.net.ru",
       };
     case "development":
@@ -18,6 +19,7 @@ function getConfig(env) {
         nodeUrl: "https://rpc.test.siberium.net",
         contractName: CONTRACT_NAME,
         explorerUrl: "https://explorer.test.siberium.net",
+        helperUrl: "https://helper.testnet.near.org",
         walletUrl: "https://wallet.testnet.siberium.net",
       };
     default:
