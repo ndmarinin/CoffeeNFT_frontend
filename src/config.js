@@ -10,7 +10,7 @@ function getConfig(env) {
         contractName: CONTRACT_NAME,
         helperUrl: "https://helper.mainnet.siberium.net.ru",
         explorerUrl: "https://explorer.main.siberium.net.ru",
-        walletUrl: "https://metamask.io",
+        walletUrl: "https://wallet.mainnet.siberium.net.ru",
       };
     case "development":
     case "testnet":
@@ -20,7 +20,7 @@ function getConfig(env) {
         contractName: CONTRACT_NAME,
         helperUrl: "https://helper.testnet.siberium.net",
         explorerUrl: "https://explorer.test.siberium.net",
-        walletUrl: "https://metamask.io",
+        walletUrl: "https://wallet.testnet.siberium.net",
       };
     default:
       throw Error(
