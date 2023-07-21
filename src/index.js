@@ -2,7 +2,7 @@
 import detectEthereumProvider from '@metamask/detect-provider';
 
 // This returns the provider, or null if it wasn't detected.
-const provider = await detectEthereumProvider();
+const provider = detectEthereumProvider();
 
 if (provider) {
   // From now on, this should always be true:
