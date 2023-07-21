@@ -8,7 +8,8 @@ function getConfig(env) {
         networkId: "111111",
         nodeUrl: "https://rpc.main.siberium.net",
         contractName: CONTRACT_NAME,
-        helperUrl: "https://helper.mainnet.metamask.io",
+        helperUrl: "https://helper.mainnet.siberium.net.ru",
+        explorerUrl: "https://explorer.main.siberium.net.ru",
       };
     case "development":
     case "testnet":
@@ -16,7 +17,8 @@ function getConfig(env) {
         networkId: "111000",
         nodeUrl: "https://rpc.test.siberium.net",
         contractName: CONTRACT_NAME,
-        helperUrl: "https://helper.testnet.metamask.io",
+        helperUrl: "https://helper.testnet.siberium.net",
+        explorerUrl: "https://explorer.test.siberium.net",
       };
     default:
       throw Error(
