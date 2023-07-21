@@ -1,77 +1,22 @@
-/*****************************************/
-/* Detect the MetaMask Ethereum provider */
-/*****************************************/
-
+// This function detects most providers injected at window.ethereum.
 import detectEthereumProvider from '@metamask/detect-provider';
 
+// This returns the provider, or null if it wasn't detected.
 const provider = await detectEthereumProvider();
 
 if (provider) {
-  startApp(provider);
+  // From now on, this should always be true:
+  // provider === window.ethereum
+  startApp(provider); // initialize your app
 } else {
   console.log('Please install MetaMask!');
 }
 
 function startApp(provider) {
+  // If the provider returned by detectEthereumProvider isn't the same as
+  // window.ethereum, something is overwriting it – perhaps another wallet.
   if (provider !== window.ethereum) {
     console.error('Do you have multiple wallets installed?');
   }
-}
-
-/**********************************************************/
-/* Handle chain (network) and chainChanged (per EIP-1193) */
-/**********************************************************/
-
-const chainId = await window.ethereum.request({ method: 'eth_chainId' });
-
-window.ethereum.on('chainChanged', handleChainChanged);
-
-function handleChainChanged(chainId) {
-  window.location.reload();
-}
-
-/***********************************************************/
-/* Handle user accounts and accountsChanged (per EIP-1193) */
-/***********************************************************/
-
-let currentAccount = null;
-window.ethereum.request({ method: 'eth_accounts' })
-  .then(handleAccountsChanged)
-  .catch((err) => {
-    console.error(err);
-  });
-
-window.ethereum.on('accountsChanged', handleAccountsChanged);
-
-function handleAccountsChanged(accounts) {
-  if (accounts.length === 0) {
-    console.log('Please connect to MetaMask.');
-  } else if (accounts[0] !== currentAccount) {
-    currentAccount = accounts[0];
-    showAccount.innerHTML = currentAccount;
-  }
-}
-
-/*********************************************/
-/* Access the user's accounts (per EIP-1102) */
-/*********************************************/
-
-const ethereumButton = document.querySelector('.enableEthereumButton');
-const showAccount = document.querySelector('.showAccount');
-
-ethereumButton.addEventListener('click', async () => {
-  await getAccount();
-});
-
-async function getAccount() {
-  const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
-    .catch((err) => {
-      if (err.code === 4001) {
-        console.log('Please connect to MetaMask.');
-      } else {
-        console.error(err);
-      }
-    });
-  const account = accounts[0];
-  showAccount.innerHTML = account;
+  // Access the decentralized web!
 }
