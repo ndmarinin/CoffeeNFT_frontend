@@ -59,8 +59,8 @@ function handleAccountsChanged(accounts) {
 const ethereumButton = document.querySelector('.enableEthereumButton');
 const showAccount = document.querySelector('.showAccount');
 
-ethereumButton.addEventListener('click', () => {
-  getAccount();
+ethereumButton.addEventListener('click', async () => {
+  await getAccount();
 });
 
 async function getAccount() {
