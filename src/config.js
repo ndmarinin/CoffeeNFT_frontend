@@ -8,7 +8,6 @@ function getConfig(env) {
         networkId: "111111",
         nodeUrl: "https://rpc.main.siberium.net",
         contractName: CONTRACT_NAME,
-        helperUrl: "https://helper.mainnet.siberium.net.ru",
         explorerUrl: "https://explorer.main.siberium.net.ru",
         walletUrl: "https://wallet.mainnet.siberium.net.ru",
       };
@@ -18,7 +17,6 @@ function getConfig(env) {
         networkId: "111000",
         nodeUrl: "https://rpc.test.siberium.net",
         contractName: CONTRACT_NAME,
-        helperUrl: "https://helper.testnet.siberium.net",
         explorerUrl: "https://explorer.test.siberium.net",
         walletUrl: "https://wallet.testnet.siberium.net",
       };
